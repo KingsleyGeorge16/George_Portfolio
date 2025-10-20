@@ -1,0 +1,111 @@
+@media screen and (max-width: 1400px){
+    #profile{
+        height: 83vh;
+        margin-bottom: 6rem;
+    }
+    .about__container,
+    .project__container{
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    #desktop-nav{
+        display: none;
+    }
+    #hamburger-nav{
+        display: flex;
+    }
+    #experience,
+    .experience__details__container{
+        margin-top: 2rem;
+    }
+    #profile,
+    .section__container{
+        display: block;
+    }
+    #about .fa-angle-double-down,
+    #experience .fa-angle-double-down,
+    #projects .fa-angle-double-down{
+        display: none;
+    }
+    section,
+    .section__container{
+        height: fit-content;
+    }
+    section{
+        margin: 0px 5%;
+    }
+    .head__profile{
+        margin: -45px 0 10px 20px;
+    }
+    .about__profile{
+        margin: 0 0 10px 15px;
+    }
+    .section__pic__container{
+        width: 275px;
+        height: 275px;
+    }
+    .about__container{
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #contact,
+    footer{
+        height: 40vh;
+    }
+    #profile{
+        height: 83vh;
+        margin-bottom: 0;
+    }
+    article{
+        font-size: 1rem;
+    }
+    footer nav{
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
+    .about__container,
+    .project__container,
+    .contact__info__upper__container,
+    .btn-container{
+        flex-wrap: wrap;
+    }
+    .contact__info__container{
+        margin: 0;
+    }
+    .contact__info__container p,
+    .nav-links li a{
+        font-size: 1rem;
+    }
+    .experience__subtitle{
+        font-size: 2.25rem;
+    }
+    .logo{
+        font-size: 1.8rem;
+    }
+    .nav-links{
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    .section__pic__container{
+        width: 200px;
+        height: 46vw;
+        justify-content: center;
+        margin-top: 0;
+        margin-bottom: 10px;
+        margin-left: 70px;
+    }
+    .section__text__p2{
+        font-size: 1.25rem;
+    }
+    .title{
+        font-size: 2rem;
+    }
+    .text__container{
+        text-align: justify; 
+    }
+}

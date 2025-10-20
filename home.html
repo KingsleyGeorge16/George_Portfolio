@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <!-- =====NAVBAR SECTION================= -->
+    <nav id="desktop-nav">
+        <a href="home.html" class="logo">KingsleyGeorge.</a>
+        <div class="">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+        <a href="home.html" class="logo">KingsleyGeorge.</a>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="home.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =====PROFILE SECTION================ -->
+    <section id="profile">
+        <div class="section__pic__container head__profile">
+            <img src="img/profile.png" class="profile-pic" alt="Kingsley George">
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title">Kingsley George.</h1>
+            <p class="section__text__p2">Web Developer</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('MyResume.pdf')">
+                    Download CV
+                </button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                    Contact Info
+                </button>
+            </div>
+            <div id="social-container">
+                <i class="fa fa-facebook-square icon" onclick="location.href='https://www.facebook.com/KingsleyGeorge'"></i>
+                <i class="fa fa-instagram icon" onclick="location.href='https://www.instagram.com/kingsleygeorge751'"></i>
+                <i class="fa fa-twitter icon" onclick="location.href='https://www.x.com/KingsleyGee'"></i>
+                <i class="fa fa-pinterest icon" onclick="location.href='https://www.pinterest.com/'"></i>
+                <i class="fa fa-linkedin icon" onclick="location.href='https://www.linkedin.com/KingsleyGeorge'"></i>
+                <i class="fa fa-github icon" onclick="location.href='https://www.github.com/KingsleyGeorge16'"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====ABOUT SECTION================== -->
+    <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section__container">
+            <div class="section__pic__container about__profile">
+                <img src="./img/profile-pic.jpg" alt="" class="about-pic">
+            </div>
+            <div class="about__details__container">
+                <div class="about__container">
+                    <div class="details__container">
+                        <i class="fa fa-graduation-cap icon"></i>
+                        <h1>Experience</h1>
+                        <p>2+ years in <br> Web Development</p>
+                    </div>
+                    <div class="details__container">
+                        <i class="fa fa-users icon"></i>
+                        <h1>Education</h1>
+                        <p>B.Sc. Bachelors Degree <br> In Computer Science</p>
+                    </div>
+                </div>
+                <div class="text__container">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Molestias, commodi in quis hic laborum iure voluptatibus 
+                        iusto ratione provident architecto? Consectetur id, quasi 
+                        veniam corporis temporibus officiis voluptatum praesentium, 
+                        ullam aliquid veritatis deleniti error dolorem doloribus bea
+                        tae dicta debitis natus omnis accusamus aspernatur laborum 
+                        architecto at quaerat! Ipsum, voluptatibus dolore!</p>
+                </div>
+            </div>
+        </div>
+        <i class="fa fa-angle-double-down icon arrow"
+        onclick="location.href='#experience'"></i>
+    </section>
+
+    <!-- =====EXPERIENCE SECTION============= -->
+    <section id="experience">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Experience</h1>
+        <div class="experience__details__container">
+            <div class="about__container">
+                
+                <div class="details__container">
+                    <h2 class="experience__subtitle">Frontend Development</h2>
+                    <div class="article__container">
+
+                        <article>
+                            <i class="fa fa-check-circle"></i>
+                            <div class="">
+                                <h3>HTML</h3>
+                                <p>Experience</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <i class="fa fa-check-circle"></i>
+                            <div class="">
+                                <h3>CSS</h3>
+                                <p>Experience</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <i class="fa fa-check-circle"></i>
+                            <div class="">
+                                <h3>JavaScript</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <i class="fa fa-check-circle"></i>
+                            <div class="">
+                                <h3>SASS</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <i class="fa fa-check-circle"></i>
+                            <div class="">
+                                <h3>TypeScript</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <i class="fa fa-check-circle"></i>
+                            <div class="">
+                                <h3>Material UI</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <div class="details__container">
+                    <h2 class="experience__subtitle">Backend Development</h2>
+                    <div class="article__container">
+
+                        <article>
+                            <i class="fa fa-check-circle"></i>
+                            <div class="">
+                                <h3>Python</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <i class="fa fa-check-circle"></i>
+                            <div class="">
+                                <h3>Django</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <i class="fa fa-check-circle"></i>
+                            <div class="">
+                                <h3>PostgreSQL</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <i class="fa fa-check-circle"></i>
+                            <div class="">
+                                <h3>Node JS</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <i class="fa fa-check-circle"></i>
+                            <div class="">
+                                <h3>Git</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <i class="fa fa-angle-double-down icon arrow"
+        onclick="location.href='#projects'"></i>
+    </section>
+
+    <!-- =====PROJECTS SECTION=============== -->
+    <section id="projects">
+        <p class="section__text__p1">Browse My Recents</p>
+        <h1 class="title">Projects</h1>
+        <div class="experience__details__container">
+
+            <div class="about__container">
+                <div class="details__container color__container">
+                    <div class="article__container">
+                        <img src="./img/project-1.png" alt="Project 1"
+                        class="project__img">
+                    </div>
+                    <h2 class="experience__subtitle project__title">Grilli Foods</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project__btn"
+                        onclick="location.href='https:://www.github.com/KingsleyGeorge16/Grilli'">Github</button>
+                        <button class="btn btn-color-1 project__btn"
+                        onclick="location.href='https:://www.github.com/KingsleyGeorge16/Grilli'">Live Demo</button>
+                    </div>
+                </div>
+
+                <div class="details__container color__container">
+                    <div class="article__container">
+                        <img src="./img/project-2.png" alt="Project 2"
+                        class="project__img">
+                    </div>
+                    <h2 class="experience__subtitle project__title">eGrocery Store</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project__btn"
+                        onclick="location.href='https:://www.github.com/KingsleyGeorge16/eGrocery'">Github</button>
+                        <button class="btn btn-color-1 project__btn"
+                        onclick="location.href='https:://www.github.com/KingsleyGeorge16/eGrocery'">Live Demo</button>
+                    </div>
+                </div>
+
+                <div class="details__container color__container">
+                    <div class="article__container">
+                        <img src="./img/project-3.png" alt="Project 3"
+                        class="project__img">
+                    </div>
+                    <h2 class="experience__subtitle project__title">Torque Rental</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project__btn"
+                        onclick="location.href='https:://www.github.com/KingsleyGeorge16/Torque'">Github</button>
+                        <button class="btn btn-color-1 project__btn"
+                        onclick="location.href='https:://www.github.com/KingsleyGeorge16/Torque'">Live Demo</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <i class="fa fa-angle-double-down icon arrow"
+        onclick="location.href='#contact'"></i>
+    </section>
+
+    <!-- =====CONTACT SECTION================ -->
+    <section id="contact">
+        <p class="section__text__p1">Get In Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact__info__upper__container">
+            <div class="contact__info__container">
+                <i class="fa fa-envelope contact__icon"></i>
+                <p><a href="mailto:kingsleygeorge751@gmail.com">kingsleygeorge751@gmail.com</a></p>
+            </div>
+            <div class="contact__info__container">
+                <i class="fa fa-linkedin contact__icon"></i>
+                <p><a href="https://www.linkedin.com/KingsleyGeorge">LinkedIn</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====FOOTER SECTION================= -->
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p>Copyright © <a href="home.html">KingsleyGeorge.</a> All Rights Reserved</p>
+    </footer>
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>
