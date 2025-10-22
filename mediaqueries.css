@@ -36,15 +36,10 @@
     section{
         margin: 0px 5%;
     }
-    .head__profile{
-        margin: -45px 0 10px 20px;
-    }
-    .about__profile{
-        margin: 0 0 10px 15px;
-    }
     .section__pic__container{
         width: 275px;
         height: 275px;
+        margin: 0 auto 2rem;
     }
     .about__container{
         margin-top: 0;
