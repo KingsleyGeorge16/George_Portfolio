@@ -183,12 +183,13 @@ section{
 
 .section__text p { font-weight: 600; }
 
-.section__text__p1 { text-align: center; }
+.section__text__p1 { text-align: center; font-family: monospace; font-size: 1rem; }
 
 .section__text__p2{ 
     font-size: 2rem; 
     margin-top: 1rem; 
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
+    font-family: fantasy; 
 }
 
 .title{
@@ -208,6 +209,10 @@ section{
     width: 2.2rem;
     cursor: pointer;
     transition: .3s ease;
+}
+
+#social-container a{
+    color: #fff;
 }
 
 #social-container i{
@@ -307,6 +312,8 @@ section{
     right: -5rem; bottom: 2.5rem;
 }
 
+.text__container p { text-align: justify; } 
+
 .details__container{
     padding: 1.5rem;
     flex: 1;
@@ -383,6 +390,7 @@ article .icon { cursor: default; }
 .color__container{
     border-color: #d9d9d9;
     background: transparent;
+    width: 300px;
 }
 
 .project__img{
@@ -395,10 +403,7 @@ article .icon { cursor: default; }
     color: #fff;
 }
 
-.project__btn{
-    color: #fff;
-    border-color: #d9d9d9;
-}
+.project__btn { color: #fff; }
 
 
 
@@ -449,12 +454,16 @@ footer p a:hover{
 .contact__info__container p { font-size: larger; }
 
 #contact .fa-envelope,
-#contact .fa-linkedin{
+#contact .fa-phone{
     font-size: 1.8rem;
     padding: 5px 5px;
     border-radius: 50%;
     color: #252b37;
     background: white;
+}
+
+#contact .fa-phone{
+    padding: 5px 9px;
 }
 
 
