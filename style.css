@@ -312,7 +312,7 @@ section{
     right: -5rem; bottom: 2.5rem;
 }
 
-.text__container p { text-align: justify; } 
+.text__container p { font-size: 1.1rem; text-align: justify; } 
 
 .details__container{
     padding: 1.5rem;
