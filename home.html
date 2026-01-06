@@ -3,454 +3,746 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Kingsley George | Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="./img/profile.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- =====NAVBAR SECTION================= -->
+    <!-- Navigation -->
     <nav id="desktop-nav">
-        <a href="home.html" class="logo">KingsleyGeorge.</a>
-        <div class="">
+        <div class="nav-container">
+            <a href="#" class="logo">KG<span>.</span></a>
             <ul class="nav-links">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <nav id="mobile-nav">
+        <div class="mobile-nav-container">
+            <a href="#" class="logo">KG<span>.</span></a>
+            <button class="theme-toggle" id="mobileThemeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-links">
+                <li><a href="#home" class="mobile-nav-link active">Home</a></li>
+                <li><a href="#about" class="mobile-nav-link">About</a></li>
+                <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+                <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <nav id="hamburger-nav">
-        <a href="home.html" class="logo">KingsleyGeorge.</a>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <p class="hero-subtitle">Hello, I'm</p>
+                <h1 class="hero-title">Kingsley <span>George</span></h1>
+                <h2 class="hero-role">Full Stack Web Developer</h2>
+                <p class="hero-description">I create beautiful, functional web experiences that drive results and engage users across all platforms.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#" class="btn btn-secondary" id="downloadCV">Download CV</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/KingsleyGeorge16" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/KingsleyGeorge" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.x.com/KingsleyGee" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/kingsleygeorge751" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-            <div class="menu-links">
-                <li><a href="home.html" onclick="toggleMenu()">Home</a></li>
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="img/profile.png" alt="Kingsley George">
+                    <div class="image-shape"></div>
+                </div>
             </div>
         </div>
-    </nav>
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
 
-    <!-- =====PROFILE SECTION================ -->
-    <section id="profile">
-        <div class="section__pic__container head__profile">
-            <img src="img/profile.png" class="profile-pic" alt="Kingsley George">
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Kingsley George.</h1>
-            <p class="section__text__p2">Web Developer</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('MyResume.pdf')">
-                    Download CV
-                </button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">
-                    Contact Info
-                </button>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-subtitle">Get To Know More</p>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
             </div>
-            <div id="social-container">
-                <a href="https://www.facebook.com/KingsleyGeorge" target="_blank"><i class="fa fa-facebook-square icon"></i></a>
-                <a href="https://www.instagram.com/kingsleygeorge751" target="_blank"><i class="fa fa-instagram icon"></i></a>
-                <a href="https://www.x.com/KingsleyGee" target="_blank"><i class="fa fa-twitter icon"></i></a>
-                <a href="https://www.pinterest.com/KingsleyGeorge" target="_blank"><i class="fa fa-pinterest icon"></i></a>
-                <a href="https://www.linkedin.com/KingsleyGeorge" target="_blank"><i class="fa fa-linkedin icon"></i></a>
-                <a href="https://www.github.com/KingsleyGeorge16" target="_blank"><i class="fa fa-github icon"></i></a>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="img/profile-pic.jpg" alt="About Kingsley George">
+                        <div class="experience-badge">
+                            <span>3+</span>
+                            <small>Years Experience</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <div class="about-cards">
+                        <div class="about-card">
+                            <div class="card-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3>Experience</h3>
+                            <p>3+ years in<br>Web Development</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Education</h3>
+                            <p>B.Sc. Degree in<br>Computer Science</p>
+                        </div>
+                    </div>
+                    <p class="about-description">
+                        I'm a passionate full-stack web developer with expertise in creating modern, responsive web applications. My approach combines clean design with robust functionality, ensuring every project delivers both visual appeal and optimal performance.
+                    </p>
+                    <p class="about-description">
+                        With a strong foundation in both front-end and back-end technologies, I specialize in building scalable solutions that provide seamless user experiences across all devices.
+                    </p>
+                    <a href="#contact" class="btn btn-primary">Let's Connect</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- =====ABOUT SECTION================== -->
-    <section id="about">
-        <p class="section__text__p1">Get To Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="section__container">
-            <div class="section__pic__container about__profile">
-                <img src="./img/profile-pic.jpg" alt="" class="about-pic">
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-subtitle">What I Can Do</p>
+                <h2 class="section-title">My Skills</h2>
+                <div class="section-line"></div>
             </div>
-            <div class="about__details__container">
-                <div class="about__container">
-                    <div class="details__container">
-                        <i class="fa fa-graduation-cap icon"></i>
-                        <h1>Experience</h1>
-                        <p>3+ years in <br> Web Development</p>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <div class="category-header">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Frontend Development</h3>
                     </div>
-                    <div class="details__container">
-                        <i class="fa fa-users icon"></i>
-                        <h1>Education</h1>
-                        <p>B.Sc. Bachelors Degree <br> In Computer Science</p>
-                    </div>
-                </div>
-                <div class="text__container">
-                    <p>I am a skilled professional responsible for designing, building, 
-                        and maintaining websites and web applications. I typically work 
-                        with HTML & CSS for designing and server-side languages like Python, 
-                        to create functional and visually appealing sites. I focus on both 
-                        the front-end (the user interface and experience) and back-end (server,
-                         database, and application logic) aspects of web development. I collaborate
-                        other designers, developers, content creators, and other stakeholders to 
-                        ensure that websites are user-friendly, responsive, and optimized for 
-                        performance and security.
-                        <br>
-                        This educational background has provided me with a strong foundation in business
-                        principles and communication strategies, equipping me with the skills necessary 
-                        to excel in dynamic professional environments.</p>
-                </div>
-            </div>
-        </div>
-        <i class="fa fa-angle-double-down icon arrow"
-        onclick="location.href='#experience'"></i>
-    </section>
-
-    <!-- =====EXPERIENCE SECTION============= -->
-    <section id="experience">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="experience__details__container">
-            <div class="about__container">
-                
-                <div class="details__container">
-                    <h2 class="experience__subtitle">Frontend Development</h2>
-                    <div class="article__container">
-
-                        <article>
-                            <i class="fa fa-check-circle"></i>
-                            <div class="">
-                                <h3>HTML</h3>
-                                <p>Experience</p>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML/CSS</span>
+                                <span class="skill-level">Expert</span>
                             </div>
-                        </article>
-
-                        <article>
-                            <i class="fa fa-check-circle"></i>
-                            <div class="">
-                                <h3>CSS</h3>
-                                <p>Experience</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
                             </div>
-                        </article>
-
-                        <article>
-                            <i class="fa fa-check-circle"></i>
-                            <div class="">
-                                <h3>JavaScript</h3>
-                                <p>Basic</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-level">Advanced</span>
                             </div>
-                        </article>
-
-                        <article>
-                            <i class="fa fa-check-circle"></i>
-                            <div class="">
-                                <h3>SASS</h3>
-                                <p>Intermediate</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
                             </div>
-                        </article>
-
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">React</span>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">SASS/SCSS</span>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="details__container">
-                    <h2 class="experience__subtitle">Backend Development</h2>
-                    <div class="article__container">
-
-                        <article>
-                            <i class="fa fa-check-circle"></i>
-                            <div class="">
-                                <h3>Python</h3>
-                                <p>Intermediate</p>
+                <div class="skills-category">
+                    <div class="category-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend Development</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Python/Django</span>
+                                <span class="skill-level">Advanced</span>
                             </div>
-                        </article>
-
-                        <article>
-                            <i class="fa fa-check-circle"></i>
-                            <div class="">
-                                <h3>Django</h3>
-                                <p>Intermediate</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
                             </div>
-                        </article>
-
-                        <article>
-                            <i class="fa fa-check-circle"></i>
-                            <div class="">
-                                <h3>PostgreSQL</h3>
-                                <p>Basic</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Node.js</span>
+                                <span class="skill-level">Intermediate</span>
                             </div>
-                        </article>
-
-                        <article>
-                            <i class="fa fa-check-circle"></i>
-                            <div class="">
-                                <h3>Git</h3>
-                                <p>Intermediate</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
                             </div>
-                        </article>
-
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">PostgreSQL</span>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Git/GitHub</span>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
-        <i class="fa fa-angle-double-down icon arrow"
-        onclick="location.href='#projects'"></i>
     </section>
 
-    <!-- =====PROJECTS SECTION=============== -->
-    <section id="projects">
-        <p class="section__text__p1">Browse My Recents</p>
-        <h1 class="title">Projects</h1>
-        
-        <div class="carousel-container">
-            <div class="carousel-wrapper">
-                <div class="carousel-track">
-                    <!-- Project 1 -->
-                    <div class="carousel-slide active">
-                        <div class="details__container color__container">
-                            <div class="article__container">
-                                <img src="./img/project-1.png" alt="Project 1" class="project__img">
-                            </div>
-                            <h2 class="experience__subtitle project__title">Grilli Foods</h2>
-                            <p class="project-description">A modern food delivery website with responsive design and intuitive user interface.</p>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project__btn" onclick="location.href='https://github.com/KingsleyGeorge16/GrilliFoods'">Github</button>
-                                <button class="btn btn-color-1 project__btn" onclick="location.href='https://grillifood.netlify.app/'">Live Demo</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="carousel-slide">
-                        <div class="details__container color__container">
-                            <div class="article__container">
-                                <img src="./img/project-2.png" alt="Project 2" class="project__img">
-                            </div>
-                            <h2 class="experience__subtitle project__title">eGrocery Store</h2>
-                            <p class="project-description">An online grocery shopping platform with cart functionality and payment integration.</p>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project__btn" onclick="location.href='https://github.com/KingsleyGeorge16/eGorcery'">Github</button>
-                                <button class="btn btn-color-1 project__btn" onclick="location.href='https://egorcery.netlify.app/'">Live Demo</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="carousel-slide">
-                        <div class="details__container color__container">
-                            <div class="article__container">
-                                <img src="./img/project-3.png" alt="Project 3" class="project__img">
-                            </div>
-                            <h2 class="experience__subtitle project__title">Torque Rental</h2>
-                            <p class="project-description">A car rental service website with vehicle booking system and admin dashboard.</p>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project__btn" onclick="location.href='https://github.com/KingsleyGeorge16/Torque'">Github</button>
-                                <button class="btn btn-color-1 project__btn" onclick="location.href='https://torque-rental.netlify.app/'">Live Demo</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 4 (Optional - can add more projects) -->
-                    <div class="carousel-slide">
-                        <div class="details__container color__container">
-                            <div class="article__container">
-                                <img src="./img/project-1.png" alt="Project 4" class="project__img">
-                            </div>
-                            <h2 class="experience__subtitle project__title">Portfolio Template</h2>
-                            <p class="project-description">A customizable portfolio template with modern design and smooth animations.</p>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project__btn" onclick="location.href='https://github.com/'">Github</button>
-                                <button class="btn btn-color-1 project__btn" onclick="location.href='https://netlify.app/'">Live Demo</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Projects Section with Carousel -->
+    <section id="projects" class="projects">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-subtitle">My Recent Work</p>
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-line"></div>
             </div>
             
-            <!-- Carousel Navigation -->
-            <div class="carousel-nav">
-                <button class="carousel-btn prev-btn" aria-label="Previous project">
-                    <i class="fa fa-chevron-left"></i>
-                </button>
-                
-                <div class="carousel-dots">
-                    <span class="dot active" data-slide="0"></span>
-                    <span class="dot" data-slide="1"></span>
-                    <span class="dot" data-slide="2"></span>
-                    <span class="dot" data-slide="3"></span>
+            <div class="projects-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Project 1 -->
+                        <div class="carousel-slide active">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="img/project-1.png" alt="Grilli Foods Project">
+                                    <div class="project-overlay">
+                                        <a href="https://grillifood.netlify.app/" target="_blank" class="view-project">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-tags">
+                                        <span class="project-tag">HTML/CSS</span>
+                                        <span class="project-tag">JavaScript</span>
+                                        <span class="project-tag">Responsive</span>
+                                    </div>
+                                    <h3 class="project-title">Grilli Foods</h3>
+                                    <p class="project-description">
+                                        A modern food delivery platform with intuitive ordering system, real-time tracking, and seamless payment integration.
+                                    </p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/KingsleyGeorge16/GrilliFoods" target="_blank" class="project-link">
+                                            <i class="fab fa-github"></i> Code
+                                        </a>
+                                        <a href="https://grillifood.netlify.app/" target="_blank" class="project-link">
+                                            <i class="fas fa-external-link-alt"></i> Live Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 2 -->
+                        <div class="carousel-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="img/project-2.png" alt="eGrocery Store Project">
+                                    <div class="project-overlay">
+                                        <a href="https://egorcery.netlify.app/" target="_blank" class="view-project">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-tags">
+                                        <span class="project-tag">React</span>
+                                        <span class="project-tag">Node.js</span>
+                                        <span class="project-tag">MongoDB</span>
+                                    </div>
+                                    <h3 class="project-title">eGrocery Store</h3>
+                                    <p class="project-description">
+                                        Full-featured online grocery platform with inventory management, shopping cart, and secure checkout system.
+                                    </p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/KingsleyGeorge16/eGorcery" target="_blank" class="project-link">
+                                            <i class="fab fa-github"></i> Code
+                                        </a>
+                                        <a href="https://egorcery.netlify.app/" target="_blank" class="project-link">
+                                            <i class="fas fa-external-link-alt"></i> Live Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 3 -->
+                        <div class="carousel-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="img/project-3.png" alt="Torque Rental Project">
+                                    <div class="project-overlay">
+                                        <a href="https://torque-rental.netlify.app/" target="_blank" class="view-project">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-tags">
+                                        <span class="project-tag">Django</span>
+                                        <span class="project-tag">PostgreSQL</span>
+                                        <span class="project-tag">REST API</span>
+                                    </div>
+                                    <h3 class="project-title">Torque Rental</h3>
+                                    <p class="project-description">
+                                        Car rental service with advanced booking system, vehicle management, and customer relationship features.
+                                    </p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/KingsleyGeorge16/Torque" target="_blank" class="project-link">
+                                            <i class="fab fa-github"></i> Code
+                                        </a>
+                                        <a href="https://torque-rental.netlify.app/" target="_blank" class="project-link">
+                                            <i class="fas fa-external-link-alt"></i> Live Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 4 -->
+                        <div class="carousel-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="img/project-1.png" alt="Portfolio Template">
+                                    <div class="project-overlay">
+                                        <a href="#" target="_blank" class="view-project">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-tags">
+                                        <span class="project-tag">HTML/CSS</span>
+                                        <span class="project-tag">JavaScript</span>
+                                        <span class="project-tag">Responsive</span>
+                                    </div>
+                                    <h3 class="project-title">Portfolio Template</h3>
+                                    <p class="project-description">
+                                        Modern portfolio template with dark mode, animated sections, and fully responsive design.
+                                    </p>
+                                    <div class="project-links">
+                                        <a href="#" target="_blank" class="project-link">
+                                            <i class="fab fa-github"></i> Code
+                                        </a>
+                                        <a href="#" target="_blank" class="project-link">
+                                            <i class="fas fa-external-link-alt"></i> Live Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Navigation -->
+                    <div class="carousel-navigation">
+                        <button class="carousel-btn prev-btn" id="prevBtn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <div class="carousel-dots" id="carouselDots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                        </div>
+                        
+                        <button class="carousel-btn next-btn" id="nextBtn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="carousel-counter">
+                        <span id="currentSlide">1</span> / <span id="totalSlides">4</span>
+                    </div>
                 </div>
-                
-                <button class="carousel-btn next-btn" aria-label="Next project">
-                    <i class="fa fa-chevron-right"></i>
-                </button>
-            </div>
-            
-            <!-- Project Counter -->
-            <div class="project-counter">
-                <span class="current-slide">1</span> / <span class="total-slides">4</span>
-            </div>
-        </div>
-        
-        <i class="fa fa-angle-double-down icon arrow" onclick="location.href='#contact'"></i>
-    </section>
-
-    <!-- =====CONTACT SECTION================ -->
-    <section id="contact">
-        <p class="section__text__p1">Get In Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact__info__upper__container">
-            <div class="contact__info__container">
-                <i class="fa fa-envelope contact__icon"></i>
-                <p><a href="mailto:kingsleygeorge751@gmail.com">kingsleygeorge751@gmail.com</a></p>
-            </div>
-            <div class="contact__info__container">
-                <i class="fa fa-phone contact__icon"></i>
-                <p><a href="tel:+23408089248520">+234 (0) 808 924 8520</a></p>
             </div>
         </div>
     </section>
 
-    <!-- =====FOOTER SECTION================= -->
-    <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-subtitle">Let's Connect</p>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:kingsleygeorge751@gmail.com">kingsleygeorge751@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+23408089248520">+234 (0) 808 924 8520</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Lagos, Nigeria</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">KG<span>.</span></a>
+                <p class="footer-text">
+                    Creating digital experiences that make a difference.
+                </p>
+                <div class="footer-social">
+                    <a href="https://github.com/KingsleyGeorge16" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/KingsleyGeorge" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.x.com/KingsleyGee" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/kingsleygeorge751" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-        </nav>
-        <p>Copyright © <a href="#desktop-nav">KingsleyGeorge.</a> All Rights Reserved</p>
+            <div class="footer-newsletter">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to my newsletter for latest projects and updates.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Kingsley George. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="scripts.js"></script>
-    
-    <!-- Carousel JavaScript -->
+    <script src="script.js"></script>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Carousel elements
-            const track = document.querySelector('.carousel-track');
-            const slides = Array.from(document.querySelectorAll('.carousel-slide'));
-            const dots = Array.from(document.querySelectorAll('.dot'));
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
-            const currentSlideSpan = document.querySelector('.current-slide');
-            const totalSlidesSpan = document.querySelector('.total-slides');
+                // DOM Elements
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+        const carouselTrack = document.getElementById('carouselTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const carouselDots = document.getElementById('carouselDots');
+        const dots = document.querySelectorAll('.dot');
+        const currentSlideSpan = document.getElementById('currentSlide');
+        const totalSlidesSpan = document.getElementById('totalSlides');
+        const contactForm = document.getElementById('contactForm');
+        const newsletterForm = document.getElementById('newsletterForm');
+        const downloadCV = document.getElementById('downloadCV');
+
+        // Theme Toggle
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
             
-            // Set total slides
-            totalSlidesSpan.textContent = slides.length;
+            // Update icon
+            const icon = themeToggle.querySelector('i');
+            icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
             
-            let currentSlide = 0;
-            const slideWidth = slides[0].getBoundingClientRect().width;
+            const mobileIcon = mobileThemeToggle.querySelector('i');
+            mobileIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        // Initialize theme
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
             
-            // Arrange slides horizontally
-            slides.forEach((slide, index) => {
-                slide.style.left = (slideWidth * index) + 'px';
-            });
+            const icon = themeToggle.querySelector('i');
+            icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
             
-            // Move to slide function
-            function moveToSlide(slideIndex) {
-                track.style.transform = 'translateX(-' + (slideWidth * slideIndex) + 'px)';
-                currentSlide = slideIndex;
+            const mobileIcon = mobileThemeToggle.querySelector('i');
+            mobileIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            hamburgerMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Close mobile menu when clicking on a link
+        function closeMobileMenu() {
+            hamburgerMenu.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Active nav link on scroll
+        function updateActiveNavLink() {
+            const scrollPosition = window.scrollY + 100;
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
                 
-                // Update active states
-                slides.forEach(slide => slide.classList.remove('active'));
-                slides[currentSlide].classList.add('active');
-                
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[currentSlide].classList.add('active');
-                
-                // Update counter
-                currentSlideSpan.textContent = currentSlide + 1;
-            }
-            
-            // Next slide
-            nextBtn.addEventListener('click', function() {
-                if (currentSlide < slides.length - 1) {
-                    moveToSlide(currentSlide + 1);
-                } else {
-                    moveToSlide(0);
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
                 }
             });
+        }
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+
+        function initCarousel() {
+            totalSlidesSpan.textContent = totalSlides;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            // Update track position
+            const slideWidth = slides[0].offsetWidth + 30; // 30px gap
+            carouselTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
             
-            // Previous slide
-            prevBtn.addEventListener('click', function() {
-                if (currentSlide > 0) {
-                    moveToSlide(currentSlide - 1);
-                } else {
-                    moveToSlide(slides.length - 1);
-                }
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
             });
+            
+            // Update counter
+            currentSlideSpan.textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        // Form handling
+        function handleContactForm(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            // In a real application, you would send this data to a server
+            console.log('Contact form submitted:', data);
+            alert('Thank you for your message! I will get back to you soon.');
+            e.target.reset();
+        }
+
+        function handleNewsletterForm(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            
+            // In a real application, you would send this to a newsletter service
+            console.log('Newsletter subscription:', email);
+            alert('Thank you for subscribing to my newsletter!');
+            e.target.reset();
+        }
+
+        // Download CV
+        function handleDownloadCV(e) {
+            e.preventDefault();
+            // In a real application, this would trigger a file download
+            console.log('Downloading CV...');
+            alert('CV download would start in a real implementation.');
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme
+            initTheme();
+            themeToggle.addEventListener('click', toggleTheme);
+            mobileThemeToggle.addEventListener('click', toggleTheme);
+            
+            // Mobile menu
+            hamburgerMenu.addEventListener('click', toggleMobileMenu);
+            
+            // Close mobile menu when clicking on links
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+            
+            // Navigation
+            window.addEventListener('scroll', updateActiveNavLink);
+            updateActiveNavLink();
+            
+            // Carousel
+            initCarousel();
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
             
             // Dot navigation
-            dots.forEach(dot => {
-                dot.addEventListener('click', function() {
-                    const slideIndex = parseInt(this.getAttribute('data-slide'));
-                    moveToSlide(slideIndex);
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToSlide(index));
+            });
+            
+            // Auto-advance carousel (optional)
+            let carouselInterval = setInterval(nextSlide, 5000);
+            
+            // Pause auto-advance on hover
+            carouselTrack.addEventListener('mouseenter', () => {
+                clearInterval(carouselInterval);
+            });
+            
+            carouselTrack.addEventListener('mouseleave', () => {
+                carouselInterval = setInterval(nextSlide, 5000);
+            });
+            
+            // Forms
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleContactForm);
+            }
+            
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', handleNewsletterForm);
+            }
+            
+            // CV download
+            if (downloadCV) {
+                downloadCV.addEventListener('click', handleDownloadCV);
+            }
+            
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        
+                        if (target) {
+                            window.scrollTo({
+                                top: target.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
                 });
             });
-            
-            // Auto-slide (optional)
-            let autoSlide = setInterval(() => {
-                if (currentSlide < slides.length - 1) {
-                    moveToSlide(currentSlide + 1);
-                } else {
-                    moveToSlide(0);
-                }
-            }, 5000);
-            
-            // Pause auto-slide on hover
-            const carouselContainer = document.querySelector('.carousel-container');
-            carouselContainer.addEventListener('mouseenter', () => {
-                clearInterval(autoSlide);
-            });
-            
-            carouselContainer.addEventListener('mouseleave', () => {
-                autoSlide = setInterval(() => {
-                    if (currentSlide < slides.length - 1) {
-                        moveToSlide(currentSlide + 1);
-                    } else {
-                        moveToSlide(0);
-                    }
-                }, 5000);
-            });
-            
-            // Touch/swipe support for mobile
-            let startX = 0;
-            let endX = 0;
-            
-            track.addEventListener('touchstart', function(e) {
-                startX = e.touches[0].clientX;
-            });
-            
-            track.addEventListener('touchmove', function(e) {
-                endX = e.touches[0].clientX;
-            });
-            
-            track.addEventListener('touchend', function() {
-                const threshold = 50;
-                
-                if (startX - endX > threshold) {
-                    // Swipe left - next slide
-                    if (currentSlide < slides.length - 1) {
-                        moveToSlide(currentSlide + 1);
-                    }
-                } else if (endX - startX > threshold) {
-                    // Swipe right - previous slide
-                    if (currentSlide > 0) {
-                        moveToSlide(currentSlide - 1);
-                    }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            updateCarousel();
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
                 }
             });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.about-card, .skills-category, .project-card').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
