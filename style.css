@@ -148,7 +148,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(var(--bg-color-rgb), 0.95);
+    background: rgba(var(--bg-color), 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: var(--shadow);
@@ -159,6 +159,9 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 .logo {
@@ -166,17 +169,26 @@ a {
     font-size: 1.75rem;
     font-weight: 800;
     color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .logo span {
     color: var(--primary-color);
 }
 
+/* Navigation Menu */
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 2rem;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link {
@@ -184,6 +196,8 @@ a {
     font-weight: 500;
     color: var(--text-light);
     padding: 0.5rem 0;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
 .nav-link::after {
@@ -207,10 +221,11 @@ a {
     width: 100%;
 }
 
+/* Nav Right Section */
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .theme-toggle {
@@ -231,24 +246,100 @@ a {
 .theme-toggle:hover {
     background: var(--primary-color);
     color: white;
+    transform: rotate(15deg);
 }
 
 /* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
-    gap: 4px;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
     cursor: pointer;
-    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    padding: 0;
     z-index: 1001;
 }
 
 .hamburger .bar {
-    width: 25px;
+    width: 100%;
     height: 3px;
     background: var(--text-color);
     border-radius: 2px;
     transition: var(--transition);
+    transform-origin: center;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 992px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--card-bg);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        box-shadow: var(--shadow);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+        gap: 0;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+        background: var(--bg-light);
+        color: var(--primary-color);
+    }
 }
 
 /* ===== HERO SECTION ===== */
