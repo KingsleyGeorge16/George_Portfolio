@@ -104,3 +104,51 @@
         text-align: justify; 
     }
 }
+
+/* Carousel specific media queries */
+@media screen and (max-width: 576px) {
+    .carousel-container {
+        padding: 10px;
+    }
+    
+    .carousel-slide .details__container {
+        padding: 15px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .carousel-dots {
+        gap: 10px;
+    }
+    
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .project-counter {
+        font-size: 16px;
+    }
+    
+    .project__img {
+        max-height: 200px;
+        object-fit: cover;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .carousel-btn {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .dot {
+        width: 14px;
+        height: 14px;
+    }
+}
