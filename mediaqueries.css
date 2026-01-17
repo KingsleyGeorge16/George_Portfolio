@@ -1271,3 +1271,52 @@
         background: var(--gradient-primary);
     }
 }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .project-image {
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .project-info {
+        padding: 20px;
+    }
+    
+    .carousel-controls {
+        gap: 20px;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .project-image {
+        height: 200px;
+    }
+    
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+    }
+}

@@ -1,14 +1,10 @@
+// scripts.js - Combined functionality for Kingsley's Portfolio
+
 // DOM Elements
 const themeToggle = document.getElementById('themeToggle');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const carouselTrack = document.getElementById('carouselTrack');
-const indicators = document.querySelectorAll('.indicator');
-const currentSlideSpan = document.getElementById('currentSlide');
-const totalSlidesSpan = document.getElementById('totalSlides');
 const contactForm = document.getElementById('contactForm');
 const newsletterForm = document.getElementById('newsletterForm');
 const downloadCV = document.getElementById('downloadCV');
@@ -68,15 +64,36 @@ function updateActiveNavLink() {
     });
 }
 
-// Carousel functionality
-let currentSlide = 0;
+// Enhanced Carousel functionality
+let carouselCurrentSlide = 0;
 let isAnimating = false;
 let autoSlideInterval;
-const slides = document.querySelectorAll('.carousel-slide');
-const totalSlides = slides.length;
+let carouselSlides;
+let carouselTrack;
+let carouselPrevBtn;
+let carouselNextBtn;
+let carouselIndicators;
+let carouselCurrentSlideElement;
+let carouselTotalSlidesElement;
 
 function initCarousel() {
-    totalSlidesSpan.textContent = totalSlides;
+    // Get carousel elements
+    carouselTrack = document.getElementById('carouselTrack');
+    carouselSlides = document.querySelectorAll('.carousel-slide');
+    carouselPrevBtn = document.getElementById('prevBtn');
+    carouselNextBtn = document.getElementById('nextBtn');
+    carouselIndicators = document.querySelectorAll('.indicator');
+    carouselCurrentSlideElement = document.getElementById('currentSlide');
+    carouselTotalSlidesElement = document.getElementById('totalSlides');
+    
+    const totalSlides = carouselSlides.length;
+    
+    // Set total slides counter
+    if (carouselTotalSlidesElement) {
+        carouselTotalSlidesElement.textContent = totalSlides;
+    }
+    
+    // Initialize carousel
     updateCarousel();
     startAutoSlide();
 }
@@ -87,21 +104,34 @@ function updateCarousel() {
     isAnimating = true;
     
     // Update track position with smooth animation
-    const slideWidth = slides[0].offsetWidth + 30;
-    carouselTrack.style.transition = 'transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1)';
-    carouselTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    if (carouselTrack) {
+        // Using translateX with percentage for better responsiveness
+        carouselTrack.style.transition = 'transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1)';
+        carouselTrack.style.transform = `translateX(-${carouselCurrentSlide * 100}%)`;
+    }
     
-    // Update indicators
-    indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentSlide);
+    // Update active slide class
+    carouselSlides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === carouselCurrentSlide);
     });
     
+    // Update indicators
+    if (carouselIndicators) {
+        carouselIndicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === carouselCurrentSlide);
+        });
+    }
+    
     // Update counter
-    currentSlideSpan.textContent = currentSlide + 1;
+    if (carouselCurrentSlideElement) {
+        carouselCurrentSlideElement.textContent = carouselCurrentSlide + 1;
+    }
     
     // Update button states
-    prevBtn.disabled = currentSlide === 0;
-    nextBtn.disabled = currentSlide === totalSlides - 1;
+    if (carouselPrevBtn && carouselNextBtn) {
+        carouselPrevBtn.disabled = carouselCurrentSlide === 0;
+        carouselNextBtn.disabled = carouselCurrentSlide === carouselSlides.length - 1;
+    }
     
     // Reset animation flag after transition
     setTimeout(() => {
@@ -110,25 +140,25 @@ function updateCarousel() {
 }
 
 function nextSlide() {
-    if (isAnimating) return;
+    if (isAnimating || !carouselSlides) return;
     
-    currentSlide = (currentSlide + 1) % totalSlides;
+    carouselCurrentSlide = (carouselCurrentSlide + 1) % carouselSlides.length;
     updateCarousel();
     resetAutoSlide();
 }
 
 function prevSlide() {
-    if (isAnimating) return;
+    if (isAnimating || !carouselSlides) return;
     
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    carouselCurrentSlide = (carouselCurrentSlide - 1 + carouselSlides.length) % carouselSlides.length;
     updateCarousel();
     resetAutoSlide();
 }
 
 function goToSlide(index) {
-    if (isAnimating || index === currentSlide) return;
+    if (isAnimating || index === carouselCurrentSlide || !carouselSlides) return;
     
-    currentSlide = index;
+    carouselCurrentSlide = index;
     updateCarousel();
     resetAutoSlide();
 }
@@ -191,7 +221,7 @@ function handleDownloadCV(e) {
     const originalText = btn.innerHTML;
     
     // Show loading state
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
+    btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Downloading...';
     btn.disabled = true;
     
     // Simulate download
@@ -200,8 +230,9 @@ function handleDownloadCV(e) {
         
         // Create a temporary download link
         const link = document.createElement('a');
-        link.href = '#'; // In real app, this would be the CV file URL
+        link.href = 'Kingsley_George_CV.pdf'; // In real app, this would be the CV file URL
         link.download = 'Kingsley_George_CV.pdf';
+        link.target = '_blank';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -219,17 +250,21 @@ function handleDownloadCV(e) {
 document.addEventListener('DOMContentLoaded', () => {
     // Theme
     initTheme();
-    themeToggle.addEventListener('click', toggleTheme);
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
     
     // Mobile menu
-    hamburger.addEventListener('click', toggleMobileMenu);
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMobileMenu);
+    }
     
     // Close mobile menu when clicking on links
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             // Get the target section
             const href = link.getAttribute('href');
-            if (href.startsWith('#')) {
+            if (href && href.startsWith('#')) {
                 e.preventDefault();
                 const target = document.querySelector(href);
                 
@@ -253,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+        if (hamburger && navMenu && !hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
             closeMobileMenu();
         }
     });
@@ -262,52 +297,74 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateActiveNavLink);
     updateActiveNavLink();
     
-    // Carousel
+    // Enhanced Carousel initialization
     initCarousel();
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
+    
+    // Carousel navigation
+    if (carouselPrevBtn) {
+        carouselPrevBtn.addEventListener('click', prevSlide);
+    }
+    
+    if (carouselNextBtn) {
+        carouselNextBtn.addEventListener('click', nextSlide);
+    }
     
     // Indicator navigation
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => goToSlide(index));
-    });
+    if (carouselIndicators) {
+        carouselIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => goToSlide(index));
+        });
+    }
     
     // Pause auto-slide on hover
-    carouselTrack.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
-    });
-    
-    carouselTrack.addEventListener('mouseleave', () => {
-        startAutoSlide();
-    });
+    if (carouselTrack) {
+        carouselTrack.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+        
+        carouselTrack.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+    }
     
     // Touch/swipe support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    carouselTrack.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-    
-    carouselTrack.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-    
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        const difference = touchStartX - touchEndX;
+    if (carouselTrack) {
+        let touchStartX = 0;
+        let touchEndX = 0;
         
-        if (Math.abs(difference) > swipeThreshold) {
-            if (difference > 0) {
-                // Swipe left - next slide
-                nextSlide();
-            } else {
-                // Swipe right - previous slide
-                prevSlide();
+        carouselTrack.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        carouselTrack.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const difference = touchStartX - touchEndX;
+            
+            if (Math.abs(difference) > swipeThreshold) {
+                if (difference > 0) {
+                    // Swipe left - next slide
+                    nextSlide();
+                } else {
+                    // Swipe right - previous slide
+                    prevSlide();
+                }
             }
         }
     }
+    
+    // Keyboard navigation for carousel
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+            nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+            prevSlide();
+        }
+    });
     
     // Forms
     if (contactForm) {
@@ -324,14 +381,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Set current year in footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    const currentYearElement = document.getElementById('currentYear');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            if (href !== '#' && href !== '#home') {
+            if (href && href !== '#' && href !== '#home') {
                 e.preventDefault();
                 const target = document.querySelector(href);
                 
@@ -393,3 +453,20 @@ const projectObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.project-card').forEach(el => {
     projectObserver.observe(el);
 });
+
+// Export functions for potential module use
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        toggleTheme,
+        toggleMobileMenu,
+        closeMobileMenu,
+        updateActiveNavLink,
+        initCarousel,
+        nextSlide,
+        prevSlide,
+        goToSlide,
+        handleContactForm,
+        handleNewsletterForm,
+        handleDownloadCV
+    };
+}
